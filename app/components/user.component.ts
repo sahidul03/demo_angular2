@@ -34,11 +34,11 @@ export class UserComponent  {
     this.showHobbies = !this.showHobbies;
   }
 
-  addHobby(hobby){
+  addHobby(hobby: string){
     this.hobbies.push(hobby);
   }
 
-  deleteHobby(index){
+  deleteHobby(index: number){
     this.hobbies.splice(index, 1);
   }
 }

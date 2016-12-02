@@ -13,6 +13,10 @@
       // our app is within the app folder
       app: 'app',
 
+      // For bootstrap
+      'moment': 'node_modules/moment/moment.js',
+      'ng2-bootstrap/ng2-bootstrap': 'node_modules/ng2-bootstrap/bundles/ng2-bootstrap.umd.js',
+
       // angular bundles
       '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
       '@angular/common': 'npm:@angular/common/bundles/common.umd.js',

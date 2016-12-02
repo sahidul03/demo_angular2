@@ -3,8 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { UserComponent } from './components/user.component';
 import { AboutComponent } from './components/about.component';
+import { CarsComponent } from './components/cars/cars.component';
 
-const AppRoutes: routes = [
+const AppRoutes: Routes = [
     {
         path: '',
         component: UserComponent
@@ -12,6 +13,10 @@ const AppRoutes: routes = [
     {
         path: 'about',
         component: AboutComponent
+    },
+    {
+        path: 'cars',
+        component: CarsComponent
     }
 ];
 
