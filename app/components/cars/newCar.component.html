@@ -1,0 +1,70 @@
+<div class="jumbotron text-center">
+    <h1>Car</h1>
+
+    <!--<p>{{ createdCar }}</p>-->
+    <form (ngSubmit)="submit()">
+        <div class="row">
+            <div class="col-md-1">
+                Title:
+            </div>
+            <div class="col-md-10">
+                <input type="text" [(ngModel)]="car.title" placeholder="Title" required /><br>
+                <div *ngFor=" let titleErr of savedCar.errors.title">
+                    Title  {{ titleErr }}
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-1">
+                Price:
+            </div>
+            <div class="col-md-10">
+                <input type="text" [(ngModel)]="car.price" placeholder="Price" required /><br>
+                <div *ngFor="let priceErr of savedCar.errors.price">
+                    Price {{ priceErr }}
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-1">
+                Discount:
+            </div>
+            <div class="col-md-10">
+                <input type="text" [(ngModel)]="car.discount" placeholder="Discount" required /><br>
+                <div *ngFor="let discountErr of savedCar.errors.discount">
+                    Discount {{ discountErr }}
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-1">
+                Details:
+            </div>
+            <div class="col-md-10">
+                <textarea [(ngModel)]="car.details" placeholder="Details" required ></textarea><br>
+                <div *ngFor="let detailsErr of savedCar.errors.details">
+                    Details {{ detailsErr }}
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-1">
+                Photo:
+            </div>
+            <div class="col-md-10">
+                <input [(ngModel)]="car.photo" type="file" ngf-select><br><br>
+                <div *ngFor="let photoErr of savedCar.errors.photo">
+                    Photo {{ photoErr }}
+                </div>
+            </div>
+        </div>
+
+
+        <input type="submit" id="submit" value="SUBMIT" />
+
+    </form>
+</div>
