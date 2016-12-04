@@ -14,8 +14,7 @@ export class NewCarComponent {
     car: Car;
 
     constructor(private CarServices: CarServices){
-        this.message = "New car page";
-        this.car = {};
+      this.message = "New car page";
     }
 
     submit(){
