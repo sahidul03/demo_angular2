@@ -14,13 +14,13 @@ export class GithubProfileServices {
     console.log('Github profile service initialized......');
   }
 
-  getUser(username){
+  getUser(username: string){
     return this.http.get('http://api.github.com/users/' + username + '?client_id=' + this.client_id + '&client_secret=' + this.client_secret)
       .map(res => res.json());
 
   }
 
-  getRepos(username){
+  getRepos(username: string){
     return this.http.get('http://api.github.com/users/' + username + '/repos?client_id=' + this.client_id + '&client_secret=' + this.client_secret)
         .map(res => res.json());
 
