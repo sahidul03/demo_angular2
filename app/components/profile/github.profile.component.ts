@@ -13,16 +13,31 @@ export class GithubProfileComponent {
   message: string;
   cars: Car[];
   user: any;
+  repos: any;
   rootApiUrl: string;
+  username: string;
 
   constructor(private GithubProfileServices: GithubProfileServices){
     this.rootApiUrl = 'http://localhost:5000/';
     this.message = "All cars are shown in here..... :)";
-    this.GithubProfileServices.getUser().subscribe(user => {
+    this.username = 'sahidul03';
+    this.GithubProfileServices.getUser(this.username).subscribe(user => {
       this.user = user;
-      console.log(user);
-    })
+    });
+    this.GithubProfileServices.getRepos(this.username).subscribe(repos => {
+      this.repos = repos;
+    });
   }
+
+  searchProfile(){
+    this.GithubProfileServices.getUser(this.username).subscribe(user => {
+      this.user = user;
+    });
+    this.GithubProfileServices.getRepos(this.username).subscribe(repos => {
+      this.repos = repos;
+    });
+  }
+
 }
 
 
