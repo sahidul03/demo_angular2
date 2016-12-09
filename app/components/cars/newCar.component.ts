@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CarServices } from '../../services/cars.service';
+import { FileUploader } from 'ng2-file-upload';
 
 @Component({
     moduleId: module.id,
@@ -12,14 +13,32 @@ import { CarServices } from '../../services/cars.service';
 export class NewCarComponent {
     message: string;
     car: Car;
+    savedCar: any;
 
-    constructor(private CarServices: CarServices){
-      this.message = "New car page";
+    constructor(private _carServices: CarServices){
+    }
+
+    ngOnInit(){
+        this.message = "New car page";
+        this.car ={
+            title: '',
+            price: 0,
+            discount: 0,
+            details: '',
+            photo: null
+        };
+    }
+
+    imageChangeEvent(fileInput: any){
+        this.car.photo = fileInput.srcElement.files[0].name;
     }
 
     submit(){
-        console.log(this.car);
+        this._carServices.addCar(this.car).subscribe(car =>{
+            console.log(car);
+        });
     }
+
 
 }
 

@@ -8,10 +8,10 @@
                 Title:
             </div>
             <div class="col-md-10">
-                <input type="text" [(ngModel)]="car.title" placeholder="Title" required /><br>
-                <div *ngFor=" let titleErr of savedCar.errors.title">
-                    Title  {{ titleErr }}
-                </div>
+                <input type="text" [(ngModel)]="car.title" name="car.title" placeholder="Title" required /><br>
+                <!--<div *ngFor=" let titleErr of savedCar.errors.title">-->
+                    <!--Title  {{ titleErr }}-->
+                <!--</div>-->
             </div>
         </div>
         <br>
@@ -20,10 +20,10 @@
                 Price:
             </div>
             <div class="col-md-10">
-                <input type="text" [(ngModel)]="car.price" placeholder="Price" required /><br>
-                <div *ngFor="let priceErr of savedCar.errors.price">
-                    Price {{ priceErr }}
-                </div>
+                <input type="text" [(ngModel)]="car.price" name="car.price"  placeholder="Price" required /><br>
+                <!--<div *ngFor="let priceErr of savedCar.errors.price">-->
+                    <!--Price {{ priceErr }}-->
+                <!--</div>-->
             </div>
         </div>
         <br>
@@ -32,10 +32,10 @@
                 Discount:
             </div>
             <div class="col-md-10">
-                <input type="text" [(ngModel)]="car.discount" placeholder="Discount" required /><br>
-                <div *ngFor="let discountErr of savedCar.errors.discount">
-                    Discount {{ discountErr }}
-                </div>
+                <input type="text" [(ngModel)]="car.discount" name="car.discount"  placeholder="Discount" required /><br>
+                <!--<div *ngFor="let discountErr of savedCar.errors.discount">-->
+                    <!--Discount {{ discountErr }}-->
+                <!--</div>-->
             </div>
         </div>
         <br>
@@ -44,10 +44,10 @@
                 Details:
             </div>
             <div class="col-md-10">
-                <textarea [(ngModel)]="car.details" placeholder="Details" required ></textarea><br>
-                <div *ngFor="let detailsErr of savedCar.errors.details">
-                    Details {{ detailsErr }}
-                </div>
+                <textarea [(ngModel)]="car.details" name="car.details"  placeholder="Details" required ></textarea><br>
+                <!--<div *ngFor="let detailsErr of savedCar.errors.details">-->
+                    <!--Details {{ detailsErr }}-->
+                <!--</div>-->
             </div>
         </div>
         <br>
@@ -56,10 +56,12 @@
                 Photo:
             </div>
             <div class="col-md-10">
-                <input [(ngModel)]="car.photo" type="file" ngf-select><br><br>
-                <div *ngFor="let photoErr of savedCar.errors.photo">
-                    Photo {{ photoErr }}
-                </div>
+                <input type="file" (change)="imageChangeEvent($event)" class="form-control" name="single" ng2FileSelect />
+                <!--<input (change)="imageChangeEvent($event)" type="file" ng2FileSelect [uploader]="uploader" />-->
+                <!--<input  (change)="imageChangeEvent($event)" type="file" ngf-select><br><br>-->
+                <!--<div *ngFor="let photoErr of savedCar.errors.photo">-->
+                    <!--Photo {{ photoErr }}-->
+                <!--</div>-->
             </div>
         </div>
 
