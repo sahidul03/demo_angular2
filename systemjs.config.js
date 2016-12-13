@@ -29,7 +29,9 @@
       '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
       '@angular/upgrade': 'npm:@angular/upgrade/bundles/upgrade.umd.js',
       '@angular/upgrade/static': 'npm:@angular/upgrade/bundles/upgrade-static.umd.js',
-
+      /** Path for ng2-file-upload */
+      'ng2-file-upload' : 'npm:ng2-file-upload',
+      /** Path for ng2-file-upload */
       // other libraries
       'rxjs':                      'npm:rxjs',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
@@ -42,7 +44,13 @@
       },
       rxjs: {
         defaultExtension: 'js'
+      },
+      /** Configuration for ng2-file-upload */
+      'ng2-file-upload' : {
+        main: './ng2-file-upload.js',
+        defaultExtension: 'js'
       }
+      /** Configuration for ng2-file-upload */
     }
   });
 })(this);

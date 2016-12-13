@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CarServices } from '../../services/cars.service';
 import { FileUploader } from 'ng2-file-upload';
 
+
 @Component({
     moduleId: module.id,
     selector: 'new-car',
