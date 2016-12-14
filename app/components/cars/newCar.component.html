@@ -2,7 +2,7 @@
     <h1>Car</h1>
 
     <!--<p>{{ createdCar }}</p>-->
-    <form #carForm (ngSubmit)="submit()">
+    <form (ngSubmit)="submit()">
         <div class="row">
             <div class="col-md-1">
                 Title:
@@ -56,7 +56,8 @@
                 Photo:
             </div>
             <div class="col-md-10">
-                <input type="file" class="form-control" [(ngModel)]="car.photo" name="car.photo"  ng2FileSelect />
+                <input type="file" ng2FileSelect [uploader]="uploader" />
+                <!--<input type="file" (change)="imageChangeEvent($event)" class="form-control" />-->
                 <!--<input (change)="imageChangeEvent($event)" type="file" ng2FileSelect [uploader]="uploader" />-->
                 <!--<input  (change)="imageChangeEvent($event)" type="file" ngf-select><br><br>-->
                 <!--<div *ngFor="let photoErr of savedCar.errors.photo">-->
@@ -64,7 +65,7 @@
                 <!--</div>-->
             </div>
         </div>
-
+        <input type="button" (click)="uploader.uploadAll()" value="image upload">
 
         <input type="submit" id="submit" value="SUBMIT" />
 
