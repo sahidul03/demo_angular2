@@ -16,7 +16,17 @@ export class CarServices {
     }
 
     getCars(){
-        return this._http.get( this.rootApiUrl + 'api/cars')
+        var tttt = {
+            'access-token': 'v8XL9HGkDrPEU6RIEqwq0A',
+            'client':       'jFalX6ZDC-GCu0dxuG_ZMA',
+            'expiry':       '1483019232',
+            'token-type':   'Bearer',
+            'uid':          'sahidul03@gmail.com'
+        };
+        var authData = JSON.parse(localStorage.getItem('authData'));
+        var headers = new Headers(authData);
+        console.log(authData)
+        return this._http.get( this.rootApiUrl + 'api/cars', { headers: headers })
             .map(res => res.json());
 
     }
