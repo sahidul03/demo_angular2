@@ -1,21 +1,37 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators, FormControl } from "@angular/forms";
-
+import { AuthServices } from '../../services/auth.service';
 
 @Component({
     moduleId: module.id,
     selector: 'signup',
-    templateUrl: 'signup.component.html'
+    templateUrl: 'signup.component.html',
+    providers: [ AuthServices ]
 })
 export class SignupComponent implements OnInit {
     myForm: FormGroup;
     error = false;
     errorMessage = '';
+    email: string;
+    password: string;
+    password_confirmation: string;
 
-    constructor() {}
+  constructor(private _AuthServices: AuthServices) {
+    this.email = '';
+    this.password = '';
+    this.password_confirmation = '';
+  }
 
     onSignup() {
-        //this.authService.signupUser(this.myForm.value);
+      var signupInfo = {
+        email: this.email,
+        password: this.password,
+        password_confirmation: this.password_confirmation
+      };
+      this._AuthServices.signUp(signupInfo).subscribe(res => {
+        console.log(res);
+
+      })
     }
 
     ngOnInit(): any {
